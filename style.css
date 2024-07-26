@@ -458,3 +458,84 @@ body.dark-mode .btn-color-1 {
   background-color: #555;
   color: #eee;
 }
+
+.logo-icon {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+@media (max-width: 992px) {
+  section {
+    margin: 0 5rem; /* Reduce margin on medium screens */
+  }
+
+  nav {
+    height: 12vh;  /* Adjust height for better spacing */
+  }
+
+  .nav-links {
+    font-size: 1.2rem;  /* Slightly smaller font for links */
+  }
+
+  #profile {
+    gap: 2rem; /* Reduce gap between profile elements */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tablet and smaller screens */
+  section {
+    margin: 0 2rem; /* Further reduce margin */
+  }
+
+  /* HAMBURGER MENU */
+  nav,
+  .nav-links {
+    display: none; /* Hide desktop nav */
+  }
+  
+  #hamburger-nav {
+    display: block;
+    text-align: center; /* Center the hamburger menu */
+    margin-top: 1rem;  /* Add some top margin */
+  }
+
+  .about-containers,
+  .experience-details-container,
+  .contact-info-upper-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .section-container {
+    flex-direction: column; /* Stack sections vertically */
+    gap: 2rem;  /* Adjust gap as needed */
+  }
+}
+
+@media (max-width: 576px) {
+  /* Mobile screens */
+  section {
+    height: auto; /* Allow sections to grow based on content */
+  }
+
+  .section__pic-container {
+    height: 250px; /* Smaller image on mobile */
+    width: 250px;
+  }
+
+  .article-container {
+    flex-direction: column; /* Stack articles vertically */
+    gap: 1.5rem;
+  }
+  
+  .project-img {
+    width: 100%; /* Project image full width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  footer {
+    height: 35vh; /* Adjust footer height for better spacing on mobile */
+  }
+}
