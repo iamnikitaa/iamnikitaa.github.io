@@ -1,216 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nikita Kumari</title>
-
-    <link rel="stylesheet" href="./index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-    </script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Montserrat|Righteous|Sen&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro&display=swap" rel="stylesheet">
-    <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js">
-    </script>
-    <link rel="stylesheet"
-        href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css" />
-</head>
-
-<body>
-    <div class="headerContainer">
-        <div class="header">
-            <div class="headerLogo">N.</div>
-            <a href='#home'>
-                <div class="selected" id="navHome">Home</div>
-            </a>
-            <a href='#skills'>
-                <div id="navSkills">Skills</div>
-            </a>
-            <a href='#activity'>
-                <div id="navActivity">Live Activity</div>
-            </a>
-            <a href='#Blogs'>
-                <div id="navProjects">Blogs</div>
-            </a>
-            <a href='#projects'>
-                <div id="navProjects">Projects</div>
-            </a>
-            
-            <!-- <a href='#contact'>
-                        <div id="navContact">Contact</div>
-                    </a> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Nikita K.</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Nikita K.</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-
-    </div>
-    <div class="mainBanner" id="home">
-        <div class="mainBannerInner">
-            <span style="font-size: 40px; font-weight: 700;">
-                Hi <span class="hand">👋</span>, I am Nikita Kumari
-            </span>
-            <br />
-            <br />
-            I am an undergraduate student at Punjab Technical Univeristy.
-            I love to code.
-            I also write blog.
-            <br />
-            <br />
-            <button onclick="location.href='https://www.linkedin.com/in/nikita-kumari-09bb85262/';" class="fill icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                    viewBox="0 0 24 24">
-                    <path
-                        d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                </svg></svg></button>
-            <button onclick="location.href='https://github.com/nikita7526';" class="fill icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                    viewBox="0 0 24 24">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg></button>
-            <button onclick="location.href='https://stackoverflow.com/users/22613601/nikita';" class="fill icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                    viewBox="0 0 24 24">
-                    <path
-                        d="M15 21h-10v-2h10v2zm6-11.665l-1.621-9.335-1.993.346 1.62 9.335 1.994-.346zm-5.964 6.937l-9.746-.975-.186 2.016 9.755.879.177-1.92zm.538-2.587l-9.276-2.608-.526 1.954 9.306 2.5.496-1.846zm1.204-2.413l-8.297-4.864-1.029 1.743 8.298 4.865 1.028-1.744zm1.866-1.467l-5.339-7.829-1.672 1.14 5.339 7.829 1.672-1.14zm-2.644 4.195v8h-12v-8h-2v10h16v-10h-2z" />
-                </svg></button>
-            <br />
-            
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
-    </div>
-    <div id="skills">
-        <div class="sectionHeading">Skills</div>
-        <div class="skillContent">
-            I possess knowledge about c++ and advanced data structures. I am also a full stack web engineer.
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.jpg" alt="Nikita profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm Nikita Kumari</p>
+        <h1 class="title"></h1>
+        <p class="section__text__p2">A forever Learner</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/NikitaResume.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
         </div>
-        <div class="skillsContainer">
-            <div class="progressContainer">
-                <div class="progessText">
-                    <div class="progressSubject">C++</div>
-                    <div class="progressPercent">Proficient</div>
-                </div>
-                <div class="progressOuter">
-                    <div class="progressInner cpp">
-                    </div>
-                </div>
-            </div>
-            <div class="progressContainer">
-                <div class="progessText">
-                    <div class="progressSubject">Data Structures</div>
-                    <div class="progressPercent">Proficient</div>
-                </div>
-                <div class="progressOuter">
-                    <div class="progressInner ds">
-                    </div>
-                </div>
-            </div>
-          
-            
-            <div class="progressContainer">
-                <div class="progessText">
-                    <div class="progressSubject">HTML</div>
-                    <div class="progressPercent">Proficient</div>
-                </div>
-                <div class="progressOuter">
-                    <div class="progressInner html">
-                    </div>
-                </div>
-            </div>
-            <div class="progressContainer">
-                <div class="progessText">
-                    <div class="progressSubject">CSS</div>
-                    <div class="progressPercent">Proficient</div>
-                </div>
-                <div class="progressOuter">
-                    <div class="progressInner css">
-                    </div>
-                </div>
-            </div>
-            <div class="progressContainer">
-                <div class="progessText">
-                    <div class="progressSubject">ReactJS</div>
-                    <div class="progressPercent">Beginner</div>
-                </div>
-                <div class="progressOuter">
-                    <div class="progressInner react">
-                    </div>
-                </div>
-            </div>
-            <div class="progressContainer">
-                <div class="progessText">
-                    <div class="progressSubject">React Native</div>
-                    <div class="progressPercent">Beginner</div>
-                </div>
-                <div class="progressOuter">
-                    <div class="progressInner reactn">
-                    </div>
-                </div>
-            </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/nikita-kumari-09bb85262/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/nikita7526'"
+          />
         </div>
-    </div>
-
-    <div id="activity">
-        <div class="sectionHeading">Live Activity</div>
-        <div class="currentActivity">
-            
-            <a href="https://github.com/nikita7526">
-                <div class="miniActivity">
-                    <img src="data:image/png;base64,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"
-                        width="60%" />
-                    <br />
-                    <span id="githubRepos">12</span>
-                    <br />
-                    Public Repositories
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/about-pic.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>
+                <li>
+                IoT intern at NIELT, Chennai. 
+                <a href="assets/internship-nielet.jpg" target="_blank">View Offer Letter</a> </li>
+                <br />
+                <li>
+                Full Stack Development intern at Meta CraftLab.
+                <a href="assets/meta-certificate.jpg">View Certificate</a>
+                <a href="assets/meta-lor.jpg"><br>View LoR</a>
+              </p></li>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p><li>Persuing Bacherlor's Degree in Computer Science & Engg.<br />(Current SGPA 8.27)</p></li>
+             <br> <li>Completed my Matriculation and Intermediate from CBSE Board.</li>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              My name is Nikita Kumari. I am currently diving into web development and data structures and algorithms (DSA) in Python. Although I wasn't initially drawn to computers, my interest in computer science blossomed after joining college, where I discovered the vast and fascinating world it offers. Now, I find immense joy in coding and creating new things. Music is my true passion, and I enjoy it with all my heart and soul (here's my fav playlist). I also have a profound love for reading, whether it's a novel, a newspaper, or even a children's book.  :))
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skillset</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title"></h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
                 </div>
-            </a>
-        </div>
-        <div class="calendar" style="width: 840px !important">
-            Loading information from GitHub
-        </div>
-    </div>
-    <div id="Blogs">
-        <div class="sectionHeading">Blogs</div>
-        <div class="BlogContainer">
-
-
-    <div id="Projects">
-        <div class="sectionHeading">Projects</div>
-        <div class="projectsContainer">
-           
-    <!-- <div class="contactMe" id="contact">
-        <span class="contactHeading">Want to collab over a project?<b>Get in touch!</b></span>
-        <div class="monkeyContainer">
-            <div class="monkey">🙈</div>
-            <div class="monkey">🙊</div>
-            <div class="monkey">🙉</div>
-        </div>
-        <div class="form">
-            <div class="formLine">
-                <input placeholder="Name" />
-                <input placeholder="Email" />
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>DSA</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Git</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
             </div>
-            <div class="formLine">
-                <input placeholder="Subject" />
+          </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-1.png"
+                alt="Project 1"
+                class="project-img"
+              />
             </div>
-            <div class="formLine">
-                <textarea placeholder="Message"></textarea>
+            <h2 class="experience-sub-title project-title">Disposable Chatroom</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
             </div>
-            <div class="formLine2">
-                <button class="fill">Send</button>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-2.png"
+                alt="Project 2"
+                class="project-img"
+              />
             </div>
+            <h2 class="experience-sub-title project-title">IoT based Battery Health Monitoing System for EV charging Station </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
         </div>
-    </div> -->
-    <div class="footer">
-        <span class="headerLogo">N.</span>
-        <br />
-        Made for the ❤️ of programming by Nikita Kumari
-        <br />
-        iamnikita004@gmail.com
-        <br />
-        <br />
-        <hr style="width: 50%;" />
-        Copyright © 2023 Nikita Kumari
-    </div>
-    <script src="./index.js"></script>
-</body>
-
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:iamnikita004@2004@gmail.com">Mail</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/nikita-kumari-09bb85262/">LinkedIn</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/github.png"
+            alt="Github icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.github.com/nikita7525/">Github</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/discord.svg"
+            alt="Github icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.discord.com/nikitaa8937/">Discord</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Nikita Kumari. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
