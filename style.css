@@ -96,8 +96,8 @@ a:hover {
 
 .menu-links {
   position: absolute;
-  top: 100%;
-  right: 0;
+  top: 12%;
+  right: 50px;
   background-color: white;
   width: fit-content;
   max-height: 0;
@@ -272,7 +272,7 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  
+
 }
 
 .about-details-container {
@@ -316,9 +316,9 @@ section {
   margin: auto 0;
 }
 
-/* EXPERIENCE SECTION */
+/* skillset SECTION */
 
-#experience {
+#skillset {
   position: relative;
 }
 
@@ -343,13 +343,15 @@ section {
   gap: 2.5rem;
   justify-content: space-around;
 }
+
 a {
-  color: #007bff; 
-  text-decoration: none; 
+  color: #007bff;
+  text-decoration: none;
 }
+
 .details-container a,
-.about-details-container a { 
-  color: #007bff; 
+.about-details-container a {
+  color: #007bff;
   /*text-decoration: underline */
 }
 
@@ -450,7 +452,8 @@ footer p {
 }
 
 #contact {
-  margin-top: 40px; /* Adjust the value to your preference */
+  margin-top: 40px;
+  /* Adjust the value to your preference */
 }
 
 body.dark-mode {
@@ -462,6 +465,7 @@ body.dark-mode {
 body.dark-mode nav {
   background-color: #333;
 }
+
 body.dark-mode .btn-color-1 {
   background-color: #555;
   color: #eee;
@@ -469,6 +473,31 @@ body.dark-mode .btn-color-1 {
 
 .logo-icon {
   width: 30px;
-  height: auto; 
-  
+  height: auto;
+
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: 15px;
+  /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffe5ec;
+  /* Background of the scrollbar track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8d6f6f;
+  /* Color of the scrollbar thumb */
+  border-radius: 50px;
+  /* Roundness of the scrollbar thumb */
+  border: 3px solid #ffffff;
+  /* Padding around the scrollbar thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #5b3e3e;
+  /* Color of the scrollbar thumb when hovered */
 }
