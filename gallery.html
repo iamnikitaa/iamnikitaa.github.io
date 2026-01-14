@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Nikita K.</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html"><img src="./assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav id="desktop-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="wholesome.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="wholesome.html">Writing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN GALLERY CONTENT -->
+    <main>
+        <section class="page-content fade-in">
+            <!-- Title -->
+            <h1 class="page-title"><Table>Things/People that just get me</Table></h1>
+            
+            <!-- The Masonry Grid -->
+            <div class="gallery-wrapper">
+                
+                <!-- Image 1 (Portrait) -->
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./assets/about-pic.jpg" alt="Memory 1">
+                    <div class="overlay"><p>College Days</p></div> <!-- Optional Caption -->
+                </div>
+
+                <!-- Add as many images as you want here -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-quote">
+            "Life is art, live yours in color."
+        </div>
+        <div class="copyright">
+            &copy; 2024 Nikita Kumari.
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesome | Nikita K.</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html"><img src="./assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav id="desktop-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="wholesome.html" class="active">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="wholesome.html">Writing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="page-content fade-in">
+            
+            <h1 class="page-title">Words, Mostly</h1>
+
+            <!-- SECTION 1: WRITINGS / THOUGHTS -->
+            <div class="journal-container">
+                
+                <!-- Entry 1 -->
+                <article class="journal-entry">
+                    <span class="entry-date">October 24, 2024</span>
+                    <h2 class="entry-title">The Beauty of Beginning</h2>
+                    <div class="entry-text">
+                        <p>
+                            I wasn't initially drawn to computers. It felt cold, mechanical. 
+                            But then I wrote my first line of Python, and something shifted. 
+                            It wasn't just logic; it was creation. Like music, it has rhythm. 
+                            Like clay, it waits to be shaped.
+                        </p>
+                        <p>
+                            Sometimes the hardest part is just sitting down to start.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Divider Line -->
+                <hr class="journal-divider">
+
+                <!-- Entry 2 -->
+                <article class="journal-entry">
+                    <span class="entry-date">September 10, 2024</span>
+                    <h2 class="entry-title">Notes on Silence</h2>
+                    <div class="entry-text">
+                        <p>
+                            "Minimal isn't empty. It's precise." I read that somewhere and it stuck with me.
+                            In code, we refactor to remove the clutter. In life, we do the same.
+                            I am learning to love the quiet moments between the chaos.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Divider Line -->
+                <hr class="journal-divider">
+
+                <!-- Add more <article> blocks here for new stories -->
+
+            </div>
+
+            <!-- SECTION 2: MUSIC & BOOKS -->
+            <div class="wholesome-extras">
+                
+                <!-- Music -->
+                <div class="extra-card">
+                    <h3>On Repeat</h3>
+                    <p class="extra-subtitle">My Current favs (as of january, 2026)</p>
+                    <a href="https://open.spotify.com/playlist/4OVnu1SXBIiq56P7i3TsPk" target="_blank" class="spotify-btn">
+                        <span>&#9654;</span> Listen on Spotify
+                    </a>
+                </div>
+
+                <!-- Books -->
+                <div class="extra-card">
+                    <h3>On The Shelf</h3>
+                    <ul class="book-list">
+                        <li>yaar papa by Divya Prakash</li>
+                        <li>Metamorphosis by Franz Kafka</li>
+                        <li>(Currently reading...)</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-quote">
+            "Words outlast the moment"
+        </div>
+        <div class="copyright">
+            &copy; 2024 Nikita Kumari.
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

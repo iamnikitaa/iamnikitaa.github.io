@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nikita K.</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for contact icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html"><img src="./assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav id="desktop-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="wholesome.html">Writing</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="wholesome.html">Writing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="page-content fade-in">
+            
+            <div class="content-wrapper">
+                <h1 class="page-title">Say Hello</h1>
+                
+                <p class="contact-intro">
+                    Whether you have a question, a project idea, or just want to say hi, 
+                    my inbox is always open.
+                </p>
+
+                <div class="contact-links-container">
+                    
+
+                    <!-- EMAIL -->
+                    <a href="mailto:iamnikita004@2004@gmail.com" class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="link-name">Email</span>
+                        <span class="link-arrow">&nearr;</span>
+                    </a>
+
+                    <!-- LINKEDIN -->
+                    <a href="https://www.linkedin.com/in/iamnikitaa" target="_blank" class="contact-item">
+                        <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
+                        <span class="link-name">LinkedIn</span>
+                        <span class="link-arrow">&nearr;</span>
+                    </a>
+
+                    <!-- GITHUB -->
+                    <a href="https://github.com/iamnikitaa" target="_blank" class="contact-item">
+                        <span class="contact-icon"><i class="fab fa-github"></i></span>
+                        <span class="link-name">GitHub</span>
+                        <span class="link-arrow">&nearr;</span>
+                    </a>
+
+                    <!-- MEDIUM -->
+                    <a href="https://medium.com/@iamnikita004" target="_blank" class="contact-item">
+                        <span class="contact-icon"><i class="fab fa-medium"></i></span>
+                        <span class="link-name">Medium</span>
+                        <span class="link-arrow">&nearr;</span>
+                    </a>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-quote">
+            "Let's create something meaningful."
+        </div>
+        <div class="copyright">
+            &copy; 2024 Nikita Kumari.
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
