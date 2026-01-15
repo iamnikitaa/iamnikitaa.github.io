@@ -1,10 +1,10 @@
-// 1. Toggle Mobile Menu
+// Toggle Mobile Menu
 function toggleMenu() {
     const menu = document.getElementById("mobile-menu");
     menu.classList.toggle("open");
 }
 
-// 2. Sparkle Effect (Keep this)
+// Sparkle Effect
 document.addEventListener('mousemove', function(e) {
     createSpark(e.pageX, e.pageY);
 });
@@ -17,37 +17,77 @@ function createSpark(x, y) {
     const randomX = (Math.random() - 0.5) * 50;
     spark.style.setProperty('--x-move', randomX + 'px');
     document.body.appendChild(spark);
-    setTimeout(() => {
-        spark.remove();
-    }, 1000);
+    setTimeout(() => { spark.remove(); }, 1000);
 }
 
-// 3. SMOOTH PAGE TRANSITIONS LOGIC
+/* --- MUSIC PLAYER LOGIC --- */
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Select all links on the page
-    const links = document.querySelectorAll('a');
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-toggle');
+    const icon = document.getElementById('music-icon');
+    const text = document.getElementById('music-text');
 
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
+    // If we are on a page without the player, stop here
+    if (!audio || !btn) return;
 
-            // Check if the link is internal (points to another html file)
-            // And ensure it's not a hash link (#) or a new tab target
-            if (href && !href.startsWith('#') && link.target !== '_blank' && !href.startsWith('mailto:')) {
-                
-                e.preventDefault(); // Stop the immediate jump
-                
-                // Add the fade-out class to body
-                document.body.classList.add('fade-out');
+    // 1. Set Volume (30% is good for background)
+    audio.volume = 0.3;
 
-                // Wait 500ms (matching the CSS transition), then go to the link
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500); 
-            }
-        });
+    // 2. Check Memory (Is music supposed to be on?)
+    const isPlaying = localStorage.getItem('musicPlaying') === 'true';
+    const savedTime = localStorage.getItem('musicTime');
+
+    // 3. Restore Timestamp (Start where we left off)
+    if (savedTime) {
+        audio.currentTime = parseFloat(savedTime);
+    }
+
+    // 4. Update Button Look
+    function updateUI(playing) {
+        if (playing) {
+            btn.classList.add('playing');
+            icon.textContent = '♪'; 
+            text.textContent = 'Pause';
+        } else {
+            btn.classList.remove('playing');
+            icon.textContent = '►'; 
+            text.textContent = 'Play';
+        }
+    }
+
+    // 5. Try to Autoplay if it was on
+    if (isPlaying) {
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                updateUI(true);
+            }).catch(() => {
+                // Browser blocked it? Set state to off.
+                localStorage.setItem('musicPlaying', 'false');
+                updateUI(false);
+            });
+        }
+    } else {
+        updateUI(false);
+    }
+
+    // 6. Handle Button Click
+    btn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            localStorage.setItem('musicPlaying', 'true');
+            updateUI(true);
+        } else {
+            audio.pause();
+            localStorage.setItem('musicPlaying', 'false');
+            updateUI(false);
+        }
     });
-});
 
-// 4. Fix for Safa
+    // 7. Save Progress Every Second
+    setInterval(() => {
+        if (!audio.paused) {
+            localStorage.setItem('musicTime', audio.currentTime);
+        }
+    }, 1000);
+});

@@ -54,14 +54,92 @@
             
             <div class="grid-container">
                 
-                <!-- Project 1 -->
+                <!-- Project 1: Rupeebee -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/project7.png" alt="Rupeebee Project">
+                    </div>
+                    <div class="card-info">
+                        <h3>Rupeebee</h3>
+                        <p>RupeeBee is a financial awareness and fraud prevention platform built for the SAFE Hackathon 2025 by Punjab & Sind Bank.
+                        Designed to make money matters simple and safe, the project was selected for presentation at Global FinTech Fest 2025.</p>
+                        <div class="card-links">
+                            <a href="https://rupeebee.vercel.app/">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Farmer Sahayak -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/project5.jpg" alt="Farmer Sahayak Project">
+                    </div>
+                    <div class="card-info">
+                        <h3>Farmer Sahayak</h3>
+                        <p>AI Agricultural Advisor is a multilingual AI system for farmers in India, offering voice, image, and text-based agricultural guidance.
+                        Built with Next.js, it supports 11 Indian languages, plant disease detection, weather-aware advice, and a no-login PWA experience.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iamnikitaa/farmer-sahayak">Github</a>
+                            <a href="https://farmer-sahayak.vercel.app/">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Road Anomaly Detection -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/project3.gif" alt="Road Anomaly Project">
+                    </div>
+                    <div class="card-info">
+                        <h3>Road Anomaly Detection</h3>
+                        <p>Road Anomaly Detection is a computer vision project using YOLOv8 to detect road defects such as cracks and potholes.
+                        It includes custom datasets, trained models, evaluation results, and demo applications.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/collabdoor/road-anomaly-detection">Github</a>
+                            <a href="https://road-anomaly-detection.streamlit.app/">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: dumbAF -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/project4.gif" alt="dumbAF Project">
+                    </div>
+                    <div class="card-info">
+                        <h3>dumbAF</h3>
+                        <p>Project dumbAF by Team CollabDoor is a centralized academic resource hub for students.
+                        It brings together PYQs, syllabus, books, study materials, and essential resources in one place.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/collabdoor/dumbAF">Github</a>
+                            <a href="https://collabdoor.github.io/dumbAF">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: notacoder -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/project6.gif" alt="notacoder Project">
+                    </div>
+                    <div class="card-info">
+                        <h3>notacoder</h3>
+                        <p>notacoder is a beginner-friendly coding playground built with Django, designed to help users learn Python through bite-sized, hands-on challenges.
+                        It offers a low-stress, no-login experience with points, progress tracking, and playful feedback to make learning feel approachable and fun.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iamnikitaa/notacoder">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Disposable Chatroom -->
                 <div class="card">
                     <div class="card-image">
                         <img src="../assets/project1.gif" alt="Disposable Chatroom">
                     </div>
                     <div class="card-info">
                         <h3>Disposable Chatroom</h3>
-                        <p>Full Stack SvelteKit Application</p>
+                        <p>A real-time disposable chatroom built with Svelte and GunDB. Users can join instantly, message in real time, delete their own messages and dispose of the room with a single click.</p>
                         <div class="card-links">
                             <a href="https://github.com/iamnikitaa/craftchat">Github</a>
                             <a href="https://craft-chat.vercel.app">Live Demo</a>
@@ -69,14 +147,15 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 7: EV Battery Monitor -->
                 <div class="card">
                     <div class="card-image">
                         <img src="../assets/project2.gif" alt="IoT Project">
                     </div>
                     <div class="card-info">
                         <h3>EV Battery Monitor</h3>
-                        <p>IoT / C++</p>
+                        <p>Quilles-Pulse is an IoT-based battery health monitoring system for EV charging using ESP32, MQTT, and Node-RED.
+                        It tracks battery and environmental data in real time with alerts and live dashboard visualization.</p>
                         <div class="card-links">
                             <a href="https://github.com/iamnikitaa/quilles-pulse">Github</a>
                             <a href="https://wokwi.com/projects/404276484147584001">Live Demo</a>
@@ -84,20 +163,29 @@
                     </div>
                 </div>
 
-                <!-- Add more project cards here if needed -->
-
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-image">
-            <img src="../assets/landing-page-logo.png" alt="Decoration">
-        </div>
         <div class="copyright">&copy; 2026 Nikita Kumari.</div>
     </footer>
+<!-- MUSIC PLAYER HTML -->
+    <div class="music-container">
+        <audio id="bg-music" loop hidden>
+            <source src="../assets/song.mp3" type="audio/mpeg">
+        </audio>
+        
+        <button id="music-toggle" class="music-btn">
+            <span id="music-icon">►</span>
+            <span id="music-text">Play</span>
+        </button>
+    </div>
 
+    <!-- Script Link (Already exists in your file) -->
     <script src="../script.js"></script>
+</body>
+</html>
 </body>
 </html>

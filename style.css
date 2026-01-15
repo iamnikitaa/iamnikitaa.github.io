@@ -296,24 +296,7 @@ footer {
 }
 
 /* Optional: Minimalist Caption on Hover */
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
 
-.overlay p {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 0.9rem;
-    color: #333;
-}
 
 .gallery-item:hover .overlay {
     opacity: 1;
@@ -402,7 +385,7 @@ footer {
 }
 
 .extra-card h3 {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -509,3 +492,108 @@ footer {
     .link-name { font-size: 1.5rem; }
     .contact-item { padding: 1rem 0; }
 }
+/* --- PROJECTS PAGE (VERTICAL LIST LAYOUT) --- */
+
+.grid-container {
+    display: flex;
+    flex-direction: column; /* Stacks projects vertically */
+    align-items: center;    /* Centers them horizontally */
+    gap: 6rem;              /* Nice spacing between projects */
+    max-width: 700px;       /* Limits width so it looks editorial */
+    margin: 0 auto;         /* Centers the container on the page */
+}
+
+.card {
+    width: 100%;
+    /* No border or background for a clean look */
+    background: transparent;
+}
+
+/* Force all images to be the same size and not break layout */
+.card-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Prevents tall images from taking over */
+    object-fit: cover; /* Crops neatly if needed */
+    border-radius: 5px;
+    
+    /* Image default state */
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    
+    /* Fix for broken images: adds a border/space if image fails */
+    min-height: 200px; 
+    background-color: #f0f0f0; 
+}
+
+.card:hover .card-image img {
+    filter: grayscale(0%);
+}
+
+.card-info {
+    padding: 2rem 0 1rem; /* Space between image and text */
+    text-align: center;
+}
+
+.card-info h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card-info p {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 1.5rem; /* Centers the text block */
+}
+
+/* --- FLOATING MUSIC BUTTON --- */
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999; /* Ensures it sits on top of everything */
+    background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    border: 1px solid #333;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.music-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Animation for the music note when playing */
+.music-btn.playing .music-icon {
+    animation: spin 3s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile: Move it slightly so it doesn't block content */
+@media screen and (max-width: 600px) {
+    .music-btn {
+        bottom: 20px;
+        left: 20px;
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
+
