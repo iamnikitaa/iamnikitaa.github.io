@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing | Nikita K.</title>
-    <link rel="icon" href="./assets/logo.jpg" type="image/jpg">
+    <!-- PATH FIXED: Use ../ because we are inside a folder -->
+    <link rel="icon" href="../assets/logo.jpg" type="image/jpg">
     
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <!-- CSS FIXED: Use ../ -->
+    <link rel="stylesheet" href="../style.css">
 </head>
-</body>
+<body>
+
+    <!-- HEADER -->
+    <header>
         <div class="header-top">
             <div class="logo-container">
-                <a href="./"><img src="./assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
+                <!-- Link back to Home uses ../ -->
+                <a href="../"><img src="../assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
             </div>
             <div class="hamburger-icon" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
@@ -23,11 +28,12 @@
         </div>
         <nav id="desktop-nav">
             <ul>
-                <li><a href="./about/">About</a></li>
-                <li><a href="./projects/">Projects</a></li>
-                <li><a href="./gallery/">Gallery</a></li>
+                <!-- All links go UP (../) except the current page (./) -->
+                <li><a href="../about/">About</a></li>
+                <li><a href="../projects/">Projects</a></li>
+                <li><a href="../gallery/">Gallery</a></li>
                 <li><a href="./" class="active">Writing</a></li>
-                <li><a href="./contact/">Contact</a></li>
+                <li><a href="../contact/">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -36,11 +42,11 @@
     <div id="mobile-menu" class="mobile-menu-overlay">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <ul>
-            <li><a href="./about/">About</a></li>
-            <li><a href="./projects/">Projects</a></li>
-            <li><a href="./gallery/">Gallery</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="../gallery/">Gallery</a></li>
             <li><a href="./">Writing</a></li>
-            <li><a href="./contact/">Contact</a></li>
+            <li><a href="../contact/">Contact</a></li>
         </ul>
     </div>
 
@@ -81,7 +87,8 @@
                             "Minimal isn't empty. It's precise." I read that somewhere and it stuck with me.
                             In code, we refactor to remove the clutter. In life, we do the same.
                             I am learning to love the quiet moments between the chaos.
-                            <br>P.S. these are just fill ins i will write/imrovise this section later</p>
+                            <br>P.S. these are just fill ins i will write/imrovise this section later
+                        </p>
                     </div>
                 </article>
 
@@ -117,10 +124,12 @@
         </div>
         <div class="copyright">&copy; 2026 Nikita Kumari.</div>
     </footer>
+
     <!-- MUSIC PLAYER HTML -->
     <div class="music-container">
         <audio id="bg-music" loop hidden>
-            <source src="./assets/song.mp3" type="audio/mpeg">
+            <!-- PATH FIXED: Use ../ -->
+            <source src="../assets/song.mp3" type="audio/mpeg">
         </audio>
         
         <button id="music-toggle" class="music-btn">
@@ -129,9 +138,7 @@
         </button>
     </div>
 
-    <!-- Script Link (Already exists in your file) -->
-    <script src="./script.js"></script>
-</body>
-</html>
+    <!-- Script Link FIXED: Use ../ -->
+    <script src="../script.js"></script>
 </body>
 </html>

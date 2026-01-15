@@ -1,18 +1,6 @@
-/* Contact Icons Styling */
-.contact-icon {
-    display: inline-block;
-    width: 2rem;
-    text-align: center;
-    margin-right: 0.5rem;
-    color: #555;
-    font-size: 1.5rem;
-    vertical-align: middle;
-    transition: color 0.3s;
-}
-.contact-item:hover .contact-icon {
-    color: #0077b5; /* LinkedIn blue for hover, or accent color */
-}
-/* --- VARIABLES & RESET --- */
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
 :root {
     --bg-color: #FAFAFA;
     --text-color: #333333;
@@ -28,32 +16,59 @@ body {
     color: var(--text-color); 
     font-family: var(--font-sans); 
     line-height: 1.6;
-    /* Page Transition Base State */
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    overflow-x: hidden; /* Prevents side scrolling on mobile */
 }
 
-/* Page Transition: Exit State */
 body.fade-out { opacity: 0; }
 
 a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
 a:hover { opacity: 0.6; }
 
-/* --- HEADER & NAV --- */
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
 header { padding: 2rem 5%; text-align: center; }
-.header-top { display: flex; justify-content: center; align-items: center; position: relative; margin-bottom: 2rem; }
+
+.header-top { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    margin-bottom: 2rem; 
+}
+
 .site-logo { width: 50px; opacity: 0.8; }
 
-#desktop-nav ul { list-style: none; display: flex; justify-content: center; gap: 3rem; }
-#desktop-nav a { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-color); position: relative; }
+#desktop-nav ul { 
+    list-style: none; 
+    display: flex; 
+    justify-content: center; 
+    gap: 3rem; 
+}
 
-/* Active Link Underline Effect */
+#desktop-nav a { 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    color: var(--text-color); 
+    position: relative; 
+}
+
 #desktop-nav a.active::after {
     content: ''; position: absolute; width: 100%; height: 1px; bottom: -5px; left: 0; background-color: var(--text-color);
 }
 
 /* --- MOBILE MENU --- */
-.hamburger-icon { display: none; flex-direction: column; gap: 6px; cursor: pointer; position: absolute; right: 0; }
+.hamburger-icon { 
+    display: none; 
+    flex-direction: column; 
+    gap: 6px; 
+    cursor: pointer; 
+    position: absolute; 
+    right: 0; 
+}
 .hamburger-icon span { width: 25px; height: 2px; background-color: var(--text-color); }
 
 .mobile-menu-overlay {
@@ -66,7 +81,26 @@ header { padding: 2rem 5%; text-align: center; }
 .mobile-menu-overlay a { font-family: var(--font-serif); font-size: 2rem; color: var(--text-color); }
 .close-btn { position: absolute; top: 2rem; right: 2rem; font-size: 3rem; cursor: pointer; }
 
-/* --- LANDING PAGE SPECIFIC --- */
+/* =========================================
+   3. GLOBAL PAGE STYLES
+   ========================================= */
+main { animation: slideUpFade 0.8s ease-out forwards; }
+
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.page-content { padding: 2rem 10%; min-height: 60vh; }
+
+.page-title {
+    text-align: center; font-size: 3rem; margin-bottom: 4rem; 
+    font-family: var(--font-serif); font-style: italic;
+}
+
+/* =========================================
+   4. LANDING PAGE
+   ========================================= */
 .landing-container {
     min-height: 60vh;
     display: flex;
@@ -76,169 +110,247 @@ header { padding: 2rem 5%; text-align: center; }
     text-align: center;
 }
 .hero-image img {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    filter: grayscale(20%);
-    border-radius: 0%; /* Keeps the landing page image round */
+    width: 400px; height: 400px; object-fit: cover; margin-bottom: 2rem;
+    filter: grayscale(20%); border-radius: 0%;
 }
-.landing-text h1 {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-weight: 400;
-}
-.landing-text p {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    margin-top: 1rem;
-    color: var(--accent-color);
-}
+.landing-text h1 { font-family: var(--font-serif); font-size: 3rem; font-weight: 400; }
+.landing-text p { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-top: 1rem; color: var(--accent-color); }
 
-/* --- INNER PAGES (Shared) --- */
-main { animation: slideUpFade 0.8s ease-out forwards; }
-
-@keyframes slideUpFade {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-.page-content { padding: 2rem 10%; min-height: 60vh; }
-.page-title {
-    text-align: center; font-size: 3rem; margin-bottom: 4rem; font-family: var(--font-serif); font-style: italic;
-}
-
-/* --- ABOUT PAGE SPECIFIC --- */
+/* =========================================
+   5. ABOUT PAGE
+   ========================================= */
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; width: 100%; max-width: 800px; margin: 0 auto;
 }
 
 .about-image-container {
-    margin-bottom: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 2rem; width: 100%; display: flex; justify-content: center;
 }
 
-/* FIX 1: INCREASED IMAGE SIZE HERE */
 .big-portrait {
-    width: 350px;
-    max-width: 600px; /* Increased from 400px to make it bigger */
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    filter: grayscale(100%);
+    width: 350px; height: 350px; max-width: 600px;
+    border-radius: 50%; /* Circle */
+    object-fit: cover; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); filter: grayscale(100%);
+    transition: filter 0.3s ease;
 }
+.big-portrait:hover { filter: grayscale(0%); }
 
 .about-name {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-family: var(--font-serif); 
-    font-size: 2.5rem;
-    font-weight: 400;
-    letter-spacing: 1px;
+    margin-top: 1rem; margin-bottom: 2rem;
+    font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; letter-spacing: 1px;
 }
 
 .bio-text p {
-    font-family: var(--font-sans); /* Clean font for reading */
-    font-weight: 300;
-    line-height: 1.8;
-    color: #333;
-    width: 100%;
-    max-width: 600px; /* Matches the image width */
-    margin: 0 auto;
-    text-align: left; /* Editorial alignment */
-    padding: 0 15px;
+    font-family: var(--font-sans); font-weight: 300; line-height: 1.8; color: #333;
+    width: 100%; max-width: 600px; margin: 0 auto; text-align: left; padding: 0 15px;
 }
 
-/* --- PROJECTS/GALLERY CARDS --- */
-.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; }
-.card-image img { width: 100%; height: auto; filter: grayscale(100%); transition: filter 0.3s; }
-.card:hover .card-image img { filter: grayscale(0%); }
-.card-info { padding: 1rem 0; text-align: center; }
-.card-info h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.5rem; }
-.card-links a { font-size: 0.75rem; text-transform: uppercase; margin: 0 10px; letter-spacing: 1px; border-bottom: 1px solid #ccc; }
-
-/* --- FOOTER --- */
-/* --- FOOTER (STACKED VERTICALLY) --- */
-footer {
+/* =========================================
+   6. PROJECTS PAGE (Vertical List)
+   ========================================= */
+.grid-container {
     display: flex;
-    flex-direction: column; /* CRITICAL: Stacks items top-to-bottom */
+    flex-direction: column; /* Stacks projects vertically */
+    align-items: center;
+    gap: 6rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card { width: 100%; background: transparent; }
+
+.card-image img {
+    width: 100%; height: auto; max-height: 400px; object-fit: cover;
+    border-radius: 5px; filter: grayscale(100%); transition: filter 0.3s ease;
+    min-height: 200px; background-color: #f0f0f0;
+}
+
+.card:hover .card-image img { filter: grayscale(0%); }
+
+.card-info { padding: 2rem 0 1rem; text-align: center; }
+
+.card-info h3 {
+    font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; color: #333;
+}
+
+.card-info p {
+    font-family: var(--font-sans); font-size: 0.95rem; color: #555;
+    line-height: 1.8; max-width: 600px; margin: 0 auto 1.5rem;
+}
+
+.card-links a {
+    font-size: 0.75rem; text-transform: uppercase; margin: 0 10px;
+    letter-spacing: 1px; border-bottom: 1px solid #ccc;
+}
+
+/* =========================================
+   7. GALLERY PAGE
+   ========================================= */
+.gallery-wrapper {
+    column-count: 3; 
+    column-gap: 2rem;
+    padding: 0 5%; max-width: 1200px; margin: 0 auto;
+}
+
+.gallery-item {
+    break-inside: avoid; margin-bottom: 2rem;
+    position: relative; overflow: hidden; border-radius: 5px;
+}
+
+.gallery-item img {
+    width: 100%; height: auto; display: block; border-radius: 5px;
+    filter: grayscale(100%); transition: all 0.5s ease; cursor: pointer;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%); transform: scale(1.02);
+}
+
+.gallery-item:hover .overlay { opacity: 1; }
+
+.overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    background: rgba(255, 255, 255, 0.9); padding: 10px; text-align: center;
+    opacity: 0; transition: opacity 0.3s ease;
+}
+
+.overlay p {
+    font-family: var(--font-serif); font-style: italic; font-size: 0.9rem; color: #333; margin: 0;
+}
+
+/* =========================================
+   8. WRITING / WHOLESOME PAGE
+   ========================================= */
+.journal-container {
+    width: 100%; max-width: 700px; margin: 0 auto 6rem auto;
+}
+
+.journal-entry { text-align: left; padding: 1rem 0; }
+
+.entry-date {
+    font-family: var(--font-sans); font-size: 0.75rem; color: #999;
+    text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.5rem;
+}
+
+.entry-title {
+    font-family: var(--font-serif); font-size: 2rem; font-weight: 400; margin-bottom: 1.5rem; color: #333;
+}
+
+.entry-text p {
+    font-family: var(--font-sans); font-size: 1rem; line-height: 1.9; color: #555; margin-bottom: 1.5rem;
+}
+
+.journal-divider {
+    border: 0; height: 1px; background: #e0e0e0; width: 20%; margin: 4rem auto;
+}
+
+.wholesome-extras {
+    display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
+    margin-top: 4rem; padding-top: 4rem; border-top: 1px solid #eaeaea;
+    max-width: 900px; margin-left: auto; margin-right: auto;
+}
+
+.extra-card { text-align: center; flex: 1; min-width: 250px; }
+
+.extra-card h3 { font-family: var(--font-sans); font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+.extra-subtitle { font-size: 0.8rem; color: #888; margin-bottom: 1.5rem; list-style: none;}
+
+.spotify-btn {
+    display: inline-block; padding: 10px 25px; border: 1px solid #333; border-radius: 50px;
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+}
+.spotify-btn:hover { background-color: #333; color: white; opacity: 1; }
+
+.book-list { list-style: none; padding: 0; }
+.book-list li {
+    font-family: var(--font-serif); font-style: italic; color: #555; margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   9. CONTACT PAGE
+   ========================================= */
+.contact-intro {
+    font-family: var(--font-sans); color: #555; margin-bottom: 4rem;
+    max-width: 500px; margin-left: auto; margin-right: auto; text-align: center;
+}
+
+.contact-links-container {
+    display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+    width: 100%; max-width: 600px; margin: 0 auto;
+}
+
+.contact-item {
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; padding: 1.5rem 0; border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+.contact-item:hover {
+    opacity: 1; padding-left: 10px; padding-right: 10px; border-color: #333;
+}
+
+.link-name { font-family: var(--font-serif); font-size: 2rem; color: #333; }
+.link-arrow { font-size: 1.5rem; color: #999; transition: transform 0.3s ease; }
+.contact-item:hover .link-arrow { transform: translate(5px, -5px); color: #333; }
+.contact-icon {
+    display: inline-block; width: 2rem; text-align: center; margin-right: 0.5rem;
+    color: #555; font-size: 1.5rem; vertical-align: middle; transition: color 0.3s;
+}
+.contact-item:hover .contact-icon { color: #0077b5; }
+.title-icon-container {
+    display: flex;
     justify-content: center;
-    align-items: center;    /* Centers items horizontally */
-    gap: 1rem;              /* Adds space between the quote and copyright */
-    
-    margin-top: 0;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    width: 100%;
+    margin-bottom: 1rem; /* Space between logo and "Say Hello" */
+}
+
+.title-icon-container img {
+    width: 50px;  /* Small and elegant size */
+    height: auto;
+    opacity: 0.8; /* Slight transparency for softness */
+    display: block;
+}
+
+/* =========================================
+   10. FOOTER & EXTRAS
+   ========================================= */
+footer {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 1rem; margin-top: 0; padding-top: 2rem; padding-bottom: 4rem;
     background-color: transparent;
 }
 
-/* Ensure the quote looks fancy */
 .footer-quote {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 1.5rem;
-    color: #555;
-    text-align: center;
-    margin-bottom: 0; /* Let flex gap handle the spacing */
+    font-family: var(--font-serif); font-style: italic; font-size: 1.5rem;
+    color: #555; text-align: center; margin-bottom: 0;
 }
 
-/* Ensure copyright is small and neat below */
+.footer-image img { width: 600px; height: auto; opacity: 1; display: block; margin: 0; }
+
 .copyright {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #999; /* Slightly lighter color for copyright looks elegant */
-    font-family: var(--font-sans);
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
+    color: #999; font-family: var(--font-sans);
 }
 
-/* Footer Image (Signature/Logo) */
-.footer-image img {
-    width: 600px; 
-    height: auto;
-    opacity: 1;
-    display: block;
-    margin: 0;
+/* --- MUSIC BUTTON --- */
+.music-btn {
+    position: fixed; bottom: 30px; left: 30px; z-index: 9999;
+    background: rgba(255, 255, 255, 0.8); border: 1px solid #333;
+    border-radius: 50px; padding: 10px 20px; cursor: pointer;
+    font-family: var(--font-serif); font-size: 0.9rem; color: #333;
+    transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+.music-btn:hover { background-color: #333; color: white; }
+.music-btn.playing .music-icon { animation: spin 3s linear infinite; display: inline-block; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* Copyright Text */
-.copyright {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #333;
-    font-family: var(--font-sans);
-}
-
-/* FIX 2: RESTORED LANDING PAGE QUOTE FONT */
-/* This specific class handles the "Potter's Clay" quote */
-.footer-quote {
-    font-family: var(--font-serif); /* Playfair Display */
-    font-style: italic;
-    font-size: 1.5rem;
-    color: #555;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-/* --- CURSOR SPARKLES --- */
+/* --- SPARKLES --- */
 .spark {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: #D4AF37;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
+    position: absolute; width: 4px; height: 4px; background-color: #D4AF37;
+    border-radius: 50%; pointer-events: none; z-index: 9999;
     animation: fallAndFade 1s linear forwards;
 }
 
@@ -247,353 +359,37 @@ footer {
     100% { opacity: 0; transform: translate(var(--x-move), 50px) scale(0); }
 }
 
-/* --- MEDIA QUERIES --- */
+/* =========================================
+   11. MOBILE RESPONSIVENESS
+   ========================================= */
 @media screen and (max-width: 768px) {
+    /* Global */
+    section, .page-content { padding: 4rem 5%; }
+    
+    /* Nav */
     header { padding: 1.5rem 5%; }
-    .header-top { justify-content: space-between; }
+    .header-top { justify-content: space-between; width: 100%; }
     #desktop-nav { display: none; }
-    .hamburger-icon { display: flex; }
-    .hero-image img { width: 300px; height: 300px; }
-    .big-portrait { max-width: 100%; }
-}
+    .hamburger-icon { display: flex; z-index: 1100; }
+    .mobile-menu-overlay a { font-size: 1.5rem; margin: 1rem 0; }
 
-/* --- GALLERY PAGE STYLES (Masonry Layout) --- */
+    /* Typography & Images */
+    .page-title { font-size: 2rem; margin-bottom: 2rem; }
+    .hero-image img, .big-portrait { width: 250px; height: 250px; }
+    .landing-text h1 { font-size: 2rem; }
+    .about-name { font-size: 2rem; }
 
-.gallery-wrapper {
-    /* This creates the columns (Pinterest style) */
-    column-count: 3; 
-    column-gap: 2rem; /* Space between columns */
-    padding: 0 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-item {
-    /* Prevents an image from being chopped in half between columns */
-    break-inside: avoid; 
-    margin-bottom: 2rem; /* Space between bottom of one image and top of next */
-    position: relative; /* Needed for hover effects */
-    overflow: hidden;
-    border-radius: 5px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
+    /* Gallery */
+    .gallery-wrapper { column-count: 1; gap: 2rem; }
     
-    /* AESTHETIC: Grayscale to Color */
-    filter: grayscale(100%);
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-/* Hover Effect: Color + Slight Zoom */
-.gallery-item:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.02); /* Very subtle zoom looks premium */
-}
-
-/* Optional: Minimalist Caption on Hover */
-
-
-.gallery-item:hover .overlay {
-    opacity: 1;
-}
-
-/* --- RESPONSIVE GALLERY --- */
-@media screen and (max-width: 1024px) {
-    .gallery-wrapper {
-        column-count: 2; /* 2 Columns on Tablets */
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .gallery-wrapper {
-        column-count: 1; /* 1 Column on Phone */
-    }
-}
-
-/* --- WHOLESOME PAGE (Journal Style) --- */
-
-.journal-container {
-    width: 100%;
-    max-width: 700px; /* Narrow width makes reading easier (like a book) */
-    margin: 0 auto 6rem auto;
-}
-
-.journal-entry {
-    text-align: left; /* Editorial alignment */
-    padding: 1rem 0;
-}
-
-.entry-date {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.entry-title {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-
-.entry-text p {
-    font-family: var(--font-sans); /* Use Montserrat for readability */
-    /* OR change to var(--font-serif) if you want it to look like a novel */
-    font-size: 1rem;
-    line-height: 1.9; /* Generous spacing */
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.journal-divider {
-    border: 0;
-    height: 1px;
-    background: #e0e0e0; /* Very subtle line */
-    width: 20%; /* Short line centered */
-    margin: 4rem auto; /* Spacing between entries */
-}
-
-/* --- MUSIC & BOOKS SECTION --- */
-
-.wholesome-extras {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-    margin-top: 4rem;
-    padding-top: 4rem;
-    border-top: 1px solid #eaeaea; /* Separates journal from extras */
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.extra-card {
-    text-align: center;
-    flex: 1;
-    min-width: 250px;
-}
-
-.extra-card h3 {
-    font-family: var(--font-sans);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.extra-subtitle {
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 1.5rem;
-}
-
-.spotify-btn {
-    display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid #333;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.spotify-btn:hover {
-    background-color: #333;
-    color: white;
-    opacity: 1; /* Override default link hover opacity */
-}
-
-.book-list {
-    list-style: none;
-    padding: 0;
-}
-
-.book-list li {
-    font-family: var(--font-serif); /* Fancy font for book titles */
-    font-style: italic;
-    color: #555;
-    margin-bottom: 0.5rem;
-}
-
-/* Mobile tweak */
-@media screen and (max-width: 600px) {
-    .entry-title { font-size: 1.5rem; }
-    .wholesome-extras { gap: 3rem; }
-}
-
-/* --- CONTACT PAGE STYLES --- */
-
-.contact-intro {
-    font-family: var(--font-sans);
-    color: #555;
-    margin-bottom: 4rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.contact-links-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* Space between links */
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-item {
-    display: flex;
-    justify-content: space-between; /* Pushes name to left, arrow to right */
-    align-items: center;
-    width: 100%;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e0e0e0; /* Subtle divider line */
-    transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-    opacity: 1; /* Override default hover opacity */
-    padding-left: 10px; /* Slight slide effect */
-    padding-right: 10px;
-    border-color: #333; /* Darkens line on hover */
-}
-
-.link-name {
-    font-family: var(--font-serif);
-    font-size: 2rem; /* Large text */
-    color: #333;
-}
-
-.link-arrow {
-    font-size: 1.5rem;
-    color: #999;
-    transition: transform 0.3s ease;
-}
-
-.contact-item:hover .link-arrow {
-    transform: translate(5px, -5px); /* Arrow moves up-right on hover */
-    color: #333;
-}
-
-/* Mobile Adjustments */
-@media screen and (max-width: 600px) {
-    .link-name { font-size: 1.5rem; }
+    /* Contact */
+    .link-name { font-size: 1.2rem; }
     .contact-item { padding: 1rem 0; }
-}
-/* --- PROJECTS PAGE (VERTICAL LIST LAYOUT) --- */
-
-.grid-container {
-    display: flex;
-    flex-direction: column; /* Stacks projects vertically */
-    align-items: center;    /* Centers them horizontally */
-    gap: 6rem;              /* Nice spacing between projects */
-    max-width: 700px;       /* Limits width so it looks editorial */
-    margin: 0 auto;         /* Centers the container on the page */
-}
-
-.card {
-    width: 100%;
-    /* No border or background for a clean look */
-    background: transparent;
-}
-
-/* Force all images to be the same size and not break layout */
-.card-image img {
-    width: 100%;
-    height: auto;
-    max-height: 400px; /* Prevents tall images from taking over */
-    object-fit: cover; /* Crops neatly if needed */
-    border-radius: 5px;
     
-    /* Image default state */
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
+    /* Music */
+    .music-btn { bottom: 20px; left: 20px; padding: 8px 12px; font-size: 0.75rem; background-color: rgba(255, 255, 255, 0.9); }
+    #music-text { display: none; }
     
-    /* Fix for broken images: adds a border/space if image fails */
-    min-height: 200px; 
-    background-color: #f0f0f0; 
+    /* Wholesome */
+    .wholesome-extras { flex-direction: column; gap: 3rem; }
 }
-
-.card:hover .card-image img {
-    filter: grayscale(0%);
-}
-
-.card-info {
-    padding: 2rem 0 1rem; /* Space between image and text */
-    text-align: center;
-}
-
-.card-info h3 {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.card-info p {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.8;
-    max-width: 600px;
-    margin: 0 auto 1.5rem; /* Centers the text block */
-}
-
-/* --- FLOATING MUSIC BUTTON --- */
-.music-btn {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    z-index: 9999; /* Ensures it sits on top of everything */
-    background: rgba(255, 255, 255, 0.8); /* Slight transparency */
-    border: 1px solid #333;
-    border-radius: 50px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: var(--font-serif);
-    font-size: 0.9rem;
-    color: #333;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.music-btn:hover {
-    background-color: #333;
-    color: white;
-}
-
-/* Animation for the music note when playing */
-.music-btn.playing .music-icon {
-    animation: spin 3s linear infinite;
-    display: inline-block;
-}
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-
-/* Mobile: Move it slightly so it doesn't block content */
-@media screen and (max-width: 600px) {
-    .music-btn {
-        bottom: 20px;
-        left: 20px;
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
-}
-
