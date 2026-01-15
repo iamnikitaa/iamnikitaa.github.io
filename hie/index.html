@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikita K.</title>
+    <link rel="icon" href="../assets/logo.jpg" type="image/jpg">
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS (Go up one level) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <!-- Points to this page -->
+                <a href="./"><img src="../assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <nav id="desktop-nav">
+            <ul>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../projects/">Projects</a></li>
+                <li><a href="../gallery/">Gallery</a></li>
+                <li><a href="../writing/">Writing</a></li>
+                <li><a href="../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="../gallery/">Gallery</a></li>
+            <li><a href="../writing/">Writing</a></li>
+            <li><a href="../contact/">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- LANDING PAGE CONTENT -->
+    <main class="landing-container">
+        <div class="hero-image">
+            <img src="../assets/profile-pic.png" alt="Hero">
+        </div>
+        <div class="landing-text">
+            <h1>Nikita Kumari</h1>
+            <p>Hey! you :)</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-quote">
+            "Minimal isn’t empty. It’s precise."
+        </div>
+        <div class="copyright">&copy; 2026 Nikita Kumari.</div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

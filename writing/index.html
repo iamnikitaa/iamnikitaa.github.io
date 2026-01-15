@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wholesome | Nikita K.</title>
+    <title>Writing | Nikita K.</title>
+    <link rel="icon" href="../assets/logo.jpg" type="image/jpg">
     
     <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -19,7 +18,7 @@
     <header>
         <div class="header-top">
             <div class="logo-container">
-                <a href="index.html"><img src="./assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
+                <a href="../hie/"><img src="../assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
             </div>
             <div class="hamburger-icon" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
@@ -27,23 +26,24 @@
         </div>
         <nav id="desktop-nav">
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="wholesome.html" class="active">Writing</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../projects/">Projects</a></li>
+                <li><a href="../gallery/">Gallery</a></li>
+                <li><a href="./" class="active">Writing</a></li>
+                <li><a href="../contact/">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- MOBILE MENU -->
     <div id="mobile-menu" class="mobile-menu-overlay">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="wholesome.html">Writing</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="../gallery/">Gallery</a></li>
+            <li><a href="./">Writing</a></li>
+            <li><a href="../contact/">Contact</a></li>
         </ul>
     </div>
 
@@ -53,7 +53,7 @@
             
             <h1 class="page-title">Words, Mostly</h1>
 
-            <!-- SECTION 1: WRITINGS / THOUGHTS -->
+            <!-- WRITINGS SECTION -->
             <div class="journal-container">
                 
                 <!-- Entry 1 -->
@@ -73,7 +73,6 @@
                     </div>
                 </article>
 
-                <!-- Divider Line -->
                 <hr class="journal-divider">
 
                 <!-- Entry 2 -->
@@ -89,35 +88,26 @@
                     </div>
                 </article>
 
-                <!-- Divider Line -->
-                <hr class="journal-divider">
-
-                <!-- Add more <article> blocks here for new stories -->
-
             </div>
 
-            <!-- SECTION 2: MUSIC & BOOKS -->
+            <!-- EXTRAS SECTION -->
             <div class="wholesome-extras">
-                
-                <!-- Music -->
                 <div class="extra-card">
                     <h3>On Repeat</h3>
-                    <p class="extra-subtitle">My Current favs (as of january, 2026)</p>
+                    <p class="extra-subtitle">My Current favs (as of Jan, 2026)</p>
                     <a href="https://open.spotify.com/playlist/4OVnu1SXBIiq56P7i3TsPk" target="_blank" class="spotify-btn">
                         <span>&#9654;</span> Listen on Spotify
                     </a>
                 </div>
 
-                <!-- Books -->
                 <div class="extra-card">
                     <h3>On The Shelf</h3>
                     <ul class="book-list">
-                        <li>yaar papa by Divya Prakash</li>
+                        <li>Yaar Papa by Divya Prakash</li>
                         <li>Metamorphosis by Franz Kafka</li>
                         <li>(Currently reading...)</li>
                     </ul>
                 </div>
-
             </div>
 
         </section>
@@ -128,11 +118,9 @@
         <div class="footer-quote">
             "Words outlast the moment"
         </div>
-        <div class="copyright">
-            &copy; 2024 Nikita Kumari.
-        </div>
+        <div class="copyright">&copy; 2026 Nikita Kumari.</div>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

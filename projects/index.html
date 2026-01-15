@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Nikita K.</title>
+    <link rel="icon" href="../assets/logo.jpg" type="image/jpg">
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="../hie/"><img src="../assets/landing-page-logo.png" alt="Nikita Logo" class="site-logo"></a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav id="desktop-nav">
+            <ul>
+                <li><a href="../about/">About</a></li>
+                <li><a href="./" class="active">Projects</a></li>
+                <li><a href="../gallery/">Gallery</a></li>
+                <li><a href="../writing/">Writing</a></li>
+                <li><a href="../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="../about/">About</a></li>
+            <li><a href="./">Projects</a></li>
+            <li><a href="../gallery/">Gallery</a></li>
+            <li><a href="../writing/">Writing</a></li>
+            <li><a href="../contact/">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="page-content fade-in">
+            <h1 class="page-title">Stuff I've worked on</h1>
+            
+            <div class="grid-container">
+                
+                <!-- Project 1 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/project1.gif" alt="Disposable Chatroom">
+                    </div>
+                    <div class="card-info">
+                        <h3>Disposable Chatroom</h3>
+                        <p>Full Stack SvelteKit Application</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iamnikitaa/craftchat">Github</a>
+                            <a href="https://craft-chat.vercel.app">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/project2.gif" alt="IoT Project">
+                    </div>
+                    <div class="card-info">
+                        <h3>EV Battery Monitor</h3>
+                        <p>IoT / C++</p>
+                        <div class="card-links">
+                            <a href="https://github.com/iamnikitaa/quilles-pulse">Github</a>
+                            <a href="https://wokwi.com/projects/404276484147584001">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more project cards here if needed -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-image">
+            <img src="../assets/landing-page-logo.png" alt="Decoration">
+        </div>
+        <div class="copyright">&copy; 2026 Nikita Kumari.</div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

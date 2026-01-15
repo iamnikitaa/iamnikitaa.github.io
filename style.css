@@ -130,7 +130,7 @@ main { animation: slideUpFade 0.8s ease-out forwards; }
 
 /* FIX 1: INCREASED IMAGE SIZE HERE */
 .big-portrait {
-    width: 100%;
+    width: 350px;
     max-width: 600px; /* Increased from 400px to make it bigger */
     height: auto;
     border-radius: 5px;
