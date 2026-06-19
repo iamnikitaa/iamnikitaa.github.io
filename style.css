@@ -21,6 +21,8 @@ body {
     overflow-x: hidden; /* Prevents side scrolling on mobile */
 }
 
+img { max-width: 100%; }
+
 body.fade-out { opacity: 0; }
 
 a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
@@ -145,6 +147,40 @@ main { animation: slideUpFade 0.8s ease-out forwards; }
 .bio-text p {
     font-family: var(--font-sans); font-weight: 300; line-height: 1.8; color: #333;
     width: 100%; max-width: 600px; margin: 0 auto; text-align: left; padding: 0 15px;
+}
+
+.resume-panel {
+    width: min(100%, 560px);
+    margin: 3rem auto 0;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid #dedede;
+    text-align: center;
+}
+
+.resume-panel p {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #333;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: #333;
+    color: #fff;
+    opacity: 1;
 }
 
 /* =========================================
@@ -327,7 +363,7 @@ footer {
     color: #555; text-align: center; margin-bottom: 0;
 }
 
-.footer-image img { width: 600px; height: auto; opacity: 1; display: block; margin: 0; }
+.footer-image img { width: min(600px, 90vw); height: auto; opacity: 1; display: block; margin: 0; }
 
 .copyright {
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
@@ -344,7 +380,7 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .music-btn:hover { background-color: #333; color: white; }
-.music-btn.playing .music-icon { animation: spin 3s linear infinite; display: inline-block; }
+.music-btn.playing #music-icon { animation: spin 3s linear infinite; display: inline-block; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
 /* --- SPARKLES --- */
@@ -364,32 +400,60 @@ footer {
    ========================================= */
 @media screen and (max-width: 768px) {
     /* Global */
-    section, .page-content { padding: 4rem 5%; }
+    section, .page-content { padding: 2.5rem 6%; }
     
     /* Nav */
-    header { padding: 1.5rem 5%; }
+    header { padding: 1.25rem 6% 0.75rem; }
     .header-top { justify-content: space-between; width: 100%; }
     #desktop-nav { display: none; }
     .hamburger-icon { display: flex; z-index: 1100; }
     .mobile-menu-overlay a { font-size: 1.5rem; margin: 1rem 0; }
 
     /* Typography & Images */
-    .page-title { font-size: 2rem; margin-bottom: 2rem; }
-    .hero-image img, .big-portrait { width: 250px; height: 250px; }
-    .landing-text h1 { font-size: 2rem; }
+    .page-title { font-size: 2rem; margin-bottom: 2rem; line-height: 1.15; }
+    .hero-image img, .big-portrait { width: min(250px, 72vw); height: min(250px, 72vw); }
+    .landing-container { min-height: calc(100vh - 190px); padding: 1rem 6% 2rem; }
+    .landing-text h1 { font-size: 2.15rem; line-height: 1.1; }
+    .landing-text p { font-size: 0.72rem; letter-spacing: 2px; }
     .about-name { font-size: 2rem; }
+    .bio-text p { padding: 0; font-size: 0.95rem; line-height: 1.75; }
+    .resume-panel { margin-top: 2.25rem; }
+    .resume-btn { width: 100%; max-width: 280px; }
 
     /* Gallery */
-    .gallery-wrapper { column-count: 1; gap: 2rem; }
+    .gallery-wrapper { column-count: 1; column-gap: 0; padding: 0; }
     
     /* Contact */
-    .link-name { font-size: 1.2rem; }
-    .contact-item { padding: 1rem 0; }
+    .contact-intro { margin-bottom: 2.5rem; font-size: 0.95rem; }
+    .link-name { font-size: 1.35rem; }
+    .contact-item { min-height: 64px; padding: 1rem 0; gap: 0.75rem; }
+    .contact-icon { width: 1.5rem; font-size: 1.2rem; margin-right: 0; }
     
     /* Music */
-    .music-btn { bottom: 20px; left: 20px; padding: 8px 12px; font-size: 0.75rem; background-color: rgba(255, 255, 255, 0.9); }
+    .music-btn { bottom: 16px; left: 16px; min-width: 42px; min-height: 42px; padding: 8px 12px; font-size: 0.75rem; background-color: rgba(255, 255, 255, 0.92); }
     #music-text { display: none; }
     
     /* Wholesome */
     .wholesome-extras { flex-direction: column; gap: 3rem; }
+}
+
+@media screen and (max-width: 520px) {
+    .site-logo { width: 42px; }
+    .page-content { padding-top: 2rem; }
+    .page-title { font-size: 1.75rem; }
+    .grid-container { gap: 4rem; }
+    .card-info { padding: 1.25rem 0 0.5rem; }
+    .card-info h3, .entry-title { font-size: 1.55rem; line-height: 1.2; }
+    .card-info p, .entry-text p { font-size: 0.92rem; line-height: 1.75; }
+    .card-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    .card-links a { margin: 0; }
+    .journal-container { margin-bottom: 4rem; }
+    .journal-divider { margin: 3rem auto; width: 32%; }
+    .footer-quote { max-width: 85vw; font-size: 1.15rem; line-height: 1.35; }
+    footer { padding: 1rem 6% 5rem; }
 }

@@ -1,13 +1,15 @@
 // Toggle Mobile Menu
 function toggleMenu() {
     const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("open");
+    if (menu) menu.classList.toggle("open");
 }
 
 // Sparkle Effect
-document.addEventListener('mousemove', function(e) {
-    createSpark(e.pageX, e.pageY);
-});
+if (window.matchMedia('(pointer: fine)').matches) {
+    document.addEventListener('mousemove', function(e) {
+        createSpark(e.pageX, e.pageY);
+    });
+}
 
 function createSpark(x, y) {
     const spark = document.createElement('div');
@@ -27,67 +29,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = document.getElementById('music-icon');
     const text = document.getElementById('music-text');
 
-    // If we are on a page without the player, stop here
-    if (!audio || !btn) return;
+    if (!audio || !btn || !icon || !text) return;
 
-    // 1. Set Volume (30% is good for background)
-    audio.volume = 0.3;
+    audio.volume = 0.28;
+    audio.preload = 'auto';
 
-    // 2. Check Memory (Is music supposed to be on?)
     const isPlaying = localStorage.getItem('musicPlaying') === 'true';
-    const savedTime = localStorage.getItem('musicTime');
+    const savedTime = parseFloat(localStorage.getItem('musicTime') || '0');
+    const savedAt = parseInt(localStorage.getItem('musicSavedAt') || '0', 10);
 
-    // 3. Restore Timestamp (Start where we left off)
     if (savedTime) {
-        audio.currentTime = parseFloat(savedTime);
+        const travelTime = isPlaying && savedAt ? (Date.now() - savedAt) / 1000 : 0;
+        audio.currentTime = savedTime + travelTime;
     }
 
-    // 4. Update Button Look
     function updateUI(playing) {
         if (playing) {
             btn.classList.add('playing');
-            icon.textContent = '♪'; 
+            icon.textContent = '||';
             text.textContent = 'Pause';
         } else {
             btn.classList.remove('playing');
-            icon.textContent = '►'; 
+            icon.textContent = '>';
             text.textContent = 'Play';
         }
     }
 
-    // 5. Try to Autoplay if it was on
-    if (isPlaying) {
+    function saveProgress() {
+        localStorage.setItem('musicTime', audio.currentTime || 0);
+        localStorage.setItem('musicSavedAt', Date.now().toString());
+    }
+
+    function playMusic() {
         const playPromise = audio.play();
         if (playPromise !== undefined) {
-            playPromise.then(() => {
-                updateUI(true);
-            }).catch(() => {
-                // Browser blocked it? Set state to off.
-                localStorage.setItem('musicPlaying', 'false');
-                updateUI(false);
-            });
+            playPromise
+                .then(() => updateUI(true))
+                .catch(() => {
+                    localStorage.setItem('musicPlaying', 'false');
+                    updateUI(false);
+                });
         }
+    }
+
+    if (isPlaying) {
+        playMusic();
     } else {
         updateUI(false);
     }
 
-    // 6. Handle Button Click
     btn.addEventListener('click', () => {
         if (audio.paused) {
-            audio.play();
             localStorage.setItem('musicPlaying', 'true');
-            updateUI(true);
+            playMusic();
         } else {
+            saveProgress();
             audio.pause();
             localStorage.setItem('musicPlaying', 'false');
             updateUI(false);
         }
     });
 
-    // 7. Save Progress Every Second
+    window.addEventListener('pagehide', saveProgress);
+    window.addEventListener('beforeunload', saveProgress);
+
     setInterval(() => {
-        if (!audio.paused) {
-            localStorage.setItem('musicTime', audio.currentTime);
-        }
-    }, 1000);
+        if (!audio.paused) saveProgress();
+    }, 250);
 });
